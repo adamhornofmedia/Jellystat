@@ -32,3 +32,6 @@ yarn-error.log*
 
 # local deployment
 /dist
+
+# local Server page config (paths, services)
+/backend/panel.config.json

@@ -11,6 +11,7 @@ import Activity from "./pages/activity";
 import Statistics from "./pages/statistics";
 import ActivityTimeline from "./pages/activity_time_line";
 import Events from "./pages/events";
+import ServerPanel from "./pages/server";
 
 const routes = [
   { path: "/", element: <Home />, exact: true },
@@ -24,6 +25,7 @@ const routes = [
   { path: "/activity", element: <Activity />, exact: true },
   { path: "/timeline", element: <ActivityTimeline />, exact: true },
   { path: "/events", element: <Events />, exact: true },
+  { path: "/server", element: <ServerPanel />, exact: true },
   { path: "/about", element: <About />, exact: true },
   { path: "/testing/*", element: <TestingRoutes />, exact: true },
 ];

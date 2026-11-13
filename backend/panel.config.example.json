@@ -1,0 +1,18 @@
+{
+  "conversion": {
+    "log": "C:/media/convert.log",
+    "progress": "C:/media/convert-progress.txt",
+    "state": "C:/media/convert-state.json",
+    "task": "Convert media",
+    "taskHour": 3
+  },
+  "folders": [
+    { "label": "Movies", "dir": "C:/media/movies" },
+    { "label": "Series", "dir": "C:/media/series" }
+  ],
+  "services": [
+    { "name": "JellyfinServer", "label": "Jellyfin" },
+    { "name": "postgresql-x64-17", "label": "PostgreSQL" }
+  ],
+  "disks": ["/mnt/media"]
+}

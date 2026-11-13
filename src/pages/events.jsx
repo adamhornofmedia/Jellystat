@@ -8,6 +8,7 @@ import axios from "../lib/axios_instance";
 import Config from "../lib/config";
 import Loading from "./components/general/loading";
 import "./css/activity.css";
+import "./css/events.css";
 
 // Events from the Jellyfin activity log: who downloaded what and when, logins, devices and clients.
 const typeLabel = (type) => i18next.t(`EVENTS_PAGE.TYPES.${type}`, { defaultValue: type });
@@ -125,7 +126,7 @@ function Events() {
         </div>
       </div>
 
-      <p className="text-secondary small">
+      <p className="text-secondary fs-small">
         <Trans i18nKey="EVENTS_PAGE.INFO" />
       </p>
 
@@ -134,7 +135,35 @@ function Events() {
           <Trans i18nKey="ERROR_MESSAGES.NO_EVENTS" />
         </h4>
       ) : (
-        <div style={{ overflowX: "auto", opacity: busy ? 0.6 : 1 }}>
+        <>
+        {/* phones: cards instead of the wide table */}
+        <div className="ev-list d-md-none" style={{ opacity: busy ? 0.6 : 1 }}>
+          {data.results.map((r) => (
+            <div key={r.Id} className="ev-card">
+              <div className="ev-card-top">
+                <span className="ev-type">{typeLabel(r.Type)}</span>
+                <span className="ev-date">{fmt(r.Date)}</span>
+              </div>
+              <div className="ev-item">
+                {r.ItemId && r.ItemKnown ? (
+                  <Link to={`/libraries/item/${r.ItemId}`}>{r.ItemName ?? r.ItemId}</Link>
+                ) : (
+                  r.ItemName ?? r.Name
+                )}
+                {r.LibraryName ? <span className="ev-muted"> · {r.LibraryName}</span> : null}
+              </div>
+              <div className="ev-meta">
+                {r.UserId ? <Link to={`/users/${r.UserId}`}>{r.UserName ?? r.UserId}</Link> : null}
+                {[r.Client, r.DeviceName, r.RemoteAddress].filter(Boolean).map((x, i) => (
+                  <span key={i} className="ev-muted">
+                    {x}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="d-none d-md-block" style={{ overflowX: "auto", opacity: busy ? 0.6 : 1 }}>
           <Table variant="dark" hover size="sm" className="bg-primary-1">
             <thead>
               <tr>
@@ -170,9 +199,10 @@ function Events() {
             </tbody>
           </Table>
         </div>
+        </>
       )}
 
-      <div className="d-flex justify-content-end align-items-center gap-2 my-3">
+      <div className="d-flex flex-wrap justify-content-center justify-content-md-end align-items-center gap-2 my-3">
         <Button variant="outline-primary" size="sm" disabled={page <= 1} onClick={() => setPage(1)}>
           <Trans i18nKey="TABLE_NAV_BUTTONS.FIRST" />
         </Button>

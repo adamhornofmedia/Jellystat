@@ -10,7 +10,8 @@
     "ABOUT": "About",
     "LOGOUT": "Logout",
     "TIMELINE": "Timeline",
-    "EVENTS": "Events"
+    "EVENTS": "Events",
+    "SERVER": "Server"
   },
   "HOME_PAGE": {
     "SESSIONS": "Sessions",
@@ -372,5 +373,46 @@
   "X_ROWS_SELECTED": "{ROWS} Rows Selected",
   "TRANSCODE_REASONS": "Transcode Reasons",
   "SUBTITLES": "Subtitles",
-  "GENRES": "Genres"
+  "GENRES": "Genres",
+  "SERVER_PAGE": {
+    "TITLE": "Server",
+    "CONVERSION": "HEVC conversion",
+    "RUNNING": "Converting now",
+    "IDLE": "Nothing is being converted",
+    "NEXT_RUN": "Next run",
+    "LAST_RUN": "Last run",
+    "CONVERTED": "Files converted",
+    "SAVED": "Space saved",
+    "BEFORE_AFTER": "Before → after",
+    "ERRORS": "Unresolved errors",
+    "SKIPPED": "Skipped (already H.264)",
+    "LOG": "Conversion log",
+    "SHOW_STARTS": "Show starts too",
+    "SPEED": "Speed",
+    "ETA": "Remaining",
+    "FINISH_AT": "Done around",
+    "POSITION": "Position",
+    "WRITTEN": "Written",
+    "SYSTEM": "System",
+    "CPU": "CPU",
+    "RAM": "Memory",
+    "UPTIME": "Uptime",
+    "DISKS": "Disks",
+    "FREE": "free",
+    "SERVICES": "Services",
+    "FOLDERS": "Libraries on disk",
+    "FILES": "files",
+    "UPDATED": "Updated",
+    "CALCULATING": "calculating…",
+    "STATE": {
+      "RUNNING": "running",
+      "STOPPED": "stopped",
+      "START_PENDING": "starting",
+      "STOP_PENDING": "stopping",
+      "PAUSED": "paused",
+      "NOT_FOUND": "not found",
+      "UNKNOWN": "unknown"
+    },
+    "NO_BACKEND": "Panel backend is not responding – restart the Jellystat service."
+  }
 }

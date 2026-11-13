@@ -8,6 +8,7 @@ import GalleryFillIcon from 'remixicon-react/GalleryFillIcon';
 import UserFillIcon from 'remixicon-react/UserFillIcon';
 import InformationFillIcon from 'remixicon-react/InformationFillIcon';
 import DownloadCloudFillIcon from 'remixicon-react/DownloadCloudFillIcon';
+import ServerFillIcon from 'remixicon-react/ServerFillIcon';
 import { Trans } from 'react-i18next';
 
 
@@ -41,6 +42,12 @@ export const navData = [
         icon: <DownloadCloudFillIcon />,
         text: <Trans i18nKey="MENU_TABS.EVENTS" />,
         link: "events"
+    },
+    {
+        id: 9,
+        icon: <ServerFillIcon />,
+        text: <Trans i18nKey="MENU_TABS.SERVER" />,
+        link: "server"
     },
     {
         id: 5,

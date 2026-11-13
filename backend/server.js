@@ -25,6 +25,7 @@ const statsRouter = require("./routes/stats");
 const backupRouter = require("./routes/backup");
 const logRouter = require("./routes/logging");
 const utilsRouter = require("./routes/utils");
+const panelRouter = require("./routes/panel");
 // const webhooksRouter = require("./routes/webhooks");
 
 // tasks
@@ -168,6 +169,9 @@ app.use("/logs", authenticate, logRouter, () => {
 app.use("/utils", authenticate, utilsRouter, () => {
   /*  #swagger.tags = ['Utils']*/
 }); // mount the API router at /utils, with JWT middleware
+app.use("/panel", authenticate, panelRouter, () => {
+  /*  #swagger.tags = ['Panel']*/
+}); // "Server" page data, with JWT middleware
 // app.use("/webhooks", authenticate, webhooksRouter, () => {
 //   /*  #swagger.tags = ['Webhooks']*/
 // }); // mount the API router at /webhooks, with JWT middleware
